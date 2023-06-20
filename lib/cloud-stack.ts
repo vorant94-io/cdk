@@ -1,16 +1,16 @@
-import * as cdk from 'aws-cdk-lib';
-import { Construct } from 'constructs';
-// import * as sqs from 'aws-cdk-lib/aws-sqs';
+import {Construct} from 'constructs';
+import {RemovalPolicy, Stack, StackProps} from "aws-cdk-lib";
+import {BlockPublicAccess, Bucket} from "aws-cdk-lib/aws-s3";
 
-export class CloudStack extends cdk.Stack {
-  constructor(scope: Construct, id: string, props?: cdk.StackProps) {
+export class CloudStack extends Stack {
+  constructor(scope: Construct, id: string, props?: StackProps) {
     super(scope, id, props);
 
-    // The code that defines your stack goes here
-
-    // example resource
-    // const queue = new sqs.Queue(this, 'CloudQueue', {
-    //   visibilityTimeout: cdk.Duration.seconds(300)
-    // });
+    const imagesBucket = new Bucket(this, `images-bucket`, {
+      publicReadAccess: true,
+      blockPublicAccess: BlockPublicAccess.BLOCK_ACLS,
+      removalPolicy: RemovalPolicy.DESTROY,
+      autoDeleteObjects: true,
+    });
   }
 }
