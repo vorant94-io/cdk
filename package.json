@@ -1,14 +1,21 @@
 {
-  "name": "cloud",
+  "name": "@vorant94-io/cloud",
   "version": "0.1.0",
+  "description": "AWS CDK stack for vorant94-io blog engine",
   "bin": {
     "cloud": "bin/cloud.js"
   },
   "scripts": {
     "build": "tsc",
     "watch": "tsc -w",
-    "test": "jest",
     "cdk": "cdk"
+  },
+  "dependencies": {
+    "aws-cdk-lib": "2.84.0",
+    "constructs": "^10.0.0",
+    "dotenv": "^16.3.1",
+    "joi": "^17.9.2",
+    "source-map-support": "^0.5.21"
   },
   "devDependencies": {
     "@types/jest": "^29.5.1",
@@ -19,11 +26,15 @@
     "ts-node": "^10.9.1",
     "typescript": "~5.0.4"
   },
-  "dependencies": {
-    "aws-cdk-lib": "2.84.0",
-    "constructs": "^10.0.0",
-    "dotenv": "^16.3.1",
-    "joi": "^17.9.2",
-    "source-map-support": "^0.5.21"
-  }
+  "homepage": "https://github.com/vorant94-io/cloud",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://npm.pkg.github.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vorant94-io/cloud"
+  },
+  "author": "Mordechai Dror @vorant94"
 }
