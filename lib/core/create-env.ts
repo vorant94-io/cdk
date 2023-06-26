@@ -15,7 +15,7 @@ export function createEnv(): Env {
 
   const { value, error } = joi
     .object<Env, true>({
-      CDK_ENV: joi.string().allow('DEV', 'PROD').required(),
+      NODE_ENV: joi.string().allow('DEV', 'PROD').required(),
       AWS_REGION: joi.string().when('NODE_ENV', {
         is: 'DEV',
         then: joi.optional().default('eu-central-1'),
@@ -34,6 +34,6 @@ export function createEnv(): Env {
 export type NodeEnv = 'DEV' | 'PROD';
 
 export interface Env {
-  CDK_ENV: NodeEnv;
+  NODE_ENV: NodeEnv;
   AWS_REGION: string;
 }

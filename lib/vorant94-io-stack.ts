@@ -2,7 +2,7 @@ import { Construct } from 'constructs';
 import { RemovalPolicy, Stack, StackProps } from 'aws-cdk-lib';
 import { BlockPublicAccess, Bucket } from 'aws-cdk-lib/aws-s3';
 
-export class CloudStack extends Stack {
+export class Vorant94IoStack extends Stack {
   constructor(scope: Construct, id: string, props?: StackProps) {
     super(scope, id, props);
 

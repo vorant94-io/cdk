@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import 'source-map-support/register';
-import { CloudStack } from '../lib/cloud-stack';
+import { Vorant94IoStack } from '../lib/vorant94-io-stack';
 import { App } from 'aws-cdk-lib';
 import { createEnv } from '../lib/core';
 
@@ -10,7 +10,7 @@ const app = new App({
   context: { env },
 });
 
-new CloudStack(app, `vorant94-io--${env.CDK_ENV}`, {
+new Vorant94IoStack(app, `vorant94-io--${env.NODE_ENV}`, {
   env: {
     region: env.AWS_REGION,
   },
